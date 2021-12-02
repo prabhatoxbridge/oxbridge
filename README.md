@@ -8,4 +8,6 @@ _Happiness and achievement go hand in hand. Whatever her ability, tailored acade
 
 _Our mission is to empower girls to discover, nurture and project their unique identities and character._
 
+**_"The morning routine in every household starts with the journey to school. Usually, this is straightforward but because of COVID-19, we are now asking ourselves what the safest way is in which our kids can travel to school."_**
+
 _Taking the hassle out of the school run._
