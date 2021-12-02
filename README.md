@@ -7,3 +7,5 @@
 _Happiness and achievement go hand in hand. Whatever her ability, tailored academic interventions by specialist staff and bespoke learning plans ensure our girls achieve. The well-being of every girl is paramount. We talk to each child daily, encouraging her to share thoughts and feelings with staff trained to recognise behavioural and emotional changes._
 
 _Our mission is to empower girls to discover, nurture and project their unique identities and character._
+
+_Taking the hassle out of the school run._
