@@ -14,3 +14,4 @@ _Taking the hassle out of the school run._
 
 Developed by: Prabhat Kumar, http://prabhatkumar.org/.
 <br/><br/><kbd>t</kbd>&nbsp;<kbd>esc</kbd><br/><br/>
+<b>Many Thanks</b> to [GitHub](https://github.com/) 💋 `~/`
