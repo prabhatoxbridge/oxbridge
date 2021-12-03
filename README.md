@@ -13,3 +13,4 @@ _Our mission is to empower girls to discover, nurture and project their unique i
 _Taking the hassle out of the school run._
 
 Developed by: Prabhat Kumar, http://prabhatkumar.org/.
+<br/><br/><kbd>t</kbd>&nbsp;<kbd>esc</kbd><br/><br/>
