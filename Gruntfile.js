@@ -29,3 +29,14 @@
  * --/The Heart of Build System/-- of "Oxbridge®".
  * ________________________________________________________________________________
  */
+// "disallowMultipleSpaces": {"allowEOLComments": true}
+// "disallowSemicolons": false
+// "requireSemicolons": true
+// "requireSpaceAfterLineComment": { "allExcept": ["#", "="] }
+
+// global __dirname: true
+// global require: true
+
+//# Usage: $ node -v
+//# Usage: $ npm -v
+//# Usage: $ grunt -version
