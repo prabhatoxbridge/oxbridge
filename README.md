@@ -11,3 +11,5 @@ _Our mission is to empower girls to discover, nurture and project their unique i
 **_"The morning routine in every household starts with the journey to school. Usually, this is straightforward but because of COVID-19, we are now asking ourselves what the safest way is in which our kids can travel to school."_**
 
 _Taking the hassle out of the school run._
+
+Developed by: Prabhat Kumar, http://prabhatkumar.org/.
