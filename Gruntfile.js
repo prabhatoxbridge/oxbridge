@@ -44,3 +44,21 @@
 // Invoking strict mode.
 // @purpose: Strict mode applies to entire scripts or to individual functions.
 "use strict";
+
+        // ———————————————————————————————————————————————————————————————————————————|
+        // Task(s) for SEED™ — Umeå — Building System ||                              |
+        // -----------------------------------------------------                      |
+        // 1. Asset(s) Preparation                                                    |
+        // 2. Build Asset(s) Verification                                             |
+        // -‡-----------------------------------------------------------------------‡-|
+        // 3. Assembly of Documentation + Application                                 |
+        // 4. Build of Sass using Compass and Lint                                    |
+        // 5. Linting + Minification (CSS + JavaScript)                               |
+        // 6. Concatenation (CSS + JavaScript)                                        |
+        // 7. Data Build + Lint                                                       |
+        // 8. Cleaning of temporary files or directories                              |
+        // 9. Localhost Server + Watch                                                |
+        // -‡-----------------------------------------------------------------------‡-|
+        // -> How to:                                                                 |
+        //    https://github.com/prabhatoxbridge/oxbridge/blob/main/BUILDING.md       |
+        // ———————————————————————————————————————————————————————————————————————————|
