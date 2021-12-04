@@ -15,3 +15,7 @@ _Oxbridge Convent School is proud to be home to the exceptional nurseries for ch
 **Purpose:**
 
 _Convent schools are mostly considered to raise up and nurture students, in a strict atmosphere, but is also thought of as a stepping stone towards self discipline. Studying in a convent school is a different experience altogether._
+
+**Nursery**
+
+_Our nursery provides a home-away-from-home for our children. We pride ourselves on developing lifelong curiosity and confidence through play and adventure. We provide a warm and caring environment that welcomes the whole family and takes care of their needs._
