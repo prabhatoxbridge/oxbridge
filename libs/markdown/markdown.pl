@@ -7,7 +7,6 @@
 # <http://daringfireball.net/projects/markdown/>
 #
 
-
 package Markdown;
 require 5.006_000;
 use strict;
@@ -22,13 +21,11 @@ $VERSION = '1.0.1';
 # use utf8;
 # binmode( STDOUT, ":utf8" );  # c.f.: http://acis.openlib.org/dev/perl-unicode-struggle.html
 
-
 #
 # Global default settings:
 #
 my $g_empty_element_suffix = " />";     # Change to ">" for HTML output
 my $g_tab_width = 4;
-
 
 #
 # Globals:
@@ -47,13 +44,11 @@ $g_nested_brackets = qr{
 	)*
 }x;
 
-
 # Table of hash values for escaped characters:
 my %g_escape_table;
 foreach my $char (split //, '\\`*_{}[]()>#+-.!') {
 	$g_escape_table{$char} = md5_hex($char);
 }
-
 
 # Global hashes, used by various utility routines
 my %g_urls;
@@ -63,7 +58,6 @@ my %g_html_blocks;
 # Used to track when we're inside an ordered or unordered list
 # (see _ProcessListItems() for details):
 my $g_list_level = 0;
-
 
 #### Blosxom plug-in interface ##########################################
 
@@ -84,7 +78,6 @@ sub story {
      }
      1;
 }
-
 
 #### Movable Type plug-in interface #####################################
 eval {require MT};  # Test to see if we're running in MT.
@@ -210,7 +203,6 @@ else {
 			$g_empty_element_suffix = ">";
 		}
 
-
 		#### Process incoming text: ###########################
 		my $text;
 		{
@@ -220,8 +212,6 @@ else {
         print Markdown($text);
     }
 }
-
-
 
 sub Markdown {
 #
@@ -239,7 +229,6 @@ sub Markdown {
 	%g_urls = ();
 	%g_titles = ();
 	%g_html_blocks = ();
-
 
 	# Standardize line endings:
 	$text =~ s{\r\n}{\n}g; 	# DOS to Unix
@@ -269,7 +258,6 @@ sub Markdown {
 
 	return $text . "\n";
 }
-
 
 sub _StripLinkDefinitions {
 #
@@ -308,7 +296,6 @@ sub _StripLinkDefinitions {
 
 	return $text;
 }
-
 
 sub _HashHTMLBlocks {
 	my $text = shift;
@@ -419,7 +406,6 @@ sub _HashHTMLBlocks {
 	return $text;
 }
 
-
 sub _RunBlockGamut {
 #
 # These are all the transformations that form block-level
@@ -450,7 +436,6 @@ sub _RunBlockGamut {
 
 	return $text;
 }
-
 
 sub _RunSpanGamut {
 #
@@ -483,7 +468,6 @@ sub _RunSpanGamut {
 	return $text;
 }
 
-
 sub _EscapeSpecialChars {
 	my $text = shift;
 	my $tokens ||= _TokenizeHTML($text);
@@ -511,7 +495,6 @@ sub _EscapeSpecialChars {
 	}
 	return $text;
 }
-
 
 sub _DoAnchors {
 #
@@ -608,7 +591,6 @@ sub _DoAnchors {
 
 	return $text;
 }
-
 
 sub _DoImages {
 #
@@ -714,7 +696,6 @@ sub _DoImages {
 	return $text;
 }
 
-
 sub _DoHeaders {
 	my $text = shift;
 
@@ -732,7 +713,6 @@ sub _DoHeaders {
 	$text =~ s{ ^(.+)[ \t]*\n-+[ \t]*\n+ }{
 		"<h2>"  .  _RunSpanGamut($1)  .  "</h2>\n\n";
 	}egmx;
-
 
 	# atx-style headers:
 	#	# Header 1
@@ -755,7 +735,6 @@ sub _DoHeaders {
 
 	return $text;
 }
-
 
 sub _DoLists {
 #
@@ -844,7 +823,6 @@ sub _DoLists {
 	return $text;
 }
 
-
 sub _ProcessListItems {
 #
 #	Process the contents of a single ordered or unordered list, splitting it
@@ -853,7 +831,6 @@ sub _ProcessListItems {
 
 	my $list_str = shift;
 	my $marker_any = shift;
-
 
 	# The $g_list_level global keeps track of when we're inside a list.
 	# Each time we enter a list, we increment it; when we leave a list,
@@ -880,7 +857,6 @@ sub _ProcessListItems {
 
 	# trim trailing blank lines:
 	$list_str =~ s/\n{2,}\z/\n/;
-
 
 	$list_str =~ s{
 		(\n)?							# leading line = $1
@@ -910,8 +886,6 @@ sub _ProcessListItems {
 	$g_list_level--;
 	return $list_str;
 }
-
-
 
 sub _DoCodeBlocks {
 #
@@ -945,7 +919,6 @@ sub _DoCodeBlocks {
 
 	return $text;
 }
-
 
 sub _DoCodeSpans {
 #
@@ -992,7 +965,6 @@ sub _DoCodeSpans {
 	return $text;
 }
 
-
 sub _EncodeCode {
 #
 # Encode/escape certain characters inside Markdown code runs.
@@ -1014,7 +986,6 @@ sub _EncodeCode {
     	}
     }
 
-
 	# Do the angle bracket song and dance:
 	s! <  !&lt;!gx;
 	s! >  !&gt;!gx;
@@ -1031,7 +1002,6 @@ sub _EncodeCode {
 	return $_;
 }
 
-
 sub _DoItalicsAndBold {
 	my $text = shift;
 
@@ -1044,7 +1014,6 @@ sub _DoItalicsAndBold {
 
 	return $text;
 }
-
 
 sub _DoBlockQuotes {
 	my $text = shift;
@@ -1080,7 +1049,6 @@ sub _DoBlockQuotes {
 
 	return $text;
 }
-
 
 sub _FormParagraphs {
 #
@@ -1118,7 +1086,6 @@ sub _FormParagraphs {
 	return join "\n\n", @grafs;
 }
 
-
 sub _EncodeAmpsAndAngles {
 # Smart processing for ampersands and angle brackets that need to be encoded.
 
@@ -1133,7 +1100,6 @@ sub _EncodeAmpsAndAngles {
 
 	return $text;
 }
-
 
 sub _EncodeBackslashEscapes {
 #
@@ -1163,7 +1129,6 @@ sub _EncodeBackslashEscapes {
     return $_;
 }
 
-
 sub _DoAutoLinks {
 	my $text = shift;
 
@@ -1185,7 +1150,6 @@ sub _DoAutoLinks {
 
 	return $text;
 }
-
 
 sub _EncodeEmailAddress {
 #
@@ -1238,19 +1202,16 @@ sub _EncodeEmailAddress {
 	return $addr;
 }
 
-
 sub _UnescapeSpecialChars {
 #
 # Swap back in all the special characters we've hidden.
 #
 	my $text = shift;
-
 	while( my($char, $hash) = each(%g_escape_table) ) {
 		$text =~ s/$hash/$char/g;
 	}
     return $text;
 }
-
 
 sub _TokenizeHTML {
 #
@@ -1292,7 +1253,6 @@ sub _TokenizeHTML {
     \@tokens;
 }
 
-
 sub _Outdent {
 #
 # Remove one level of line-leading tabs or spaces
@@ -1303,23 +1263,19 @@ sub _Outdent {
 	return $text;
 }
 
-
 sub _Detab {
 #
 # Cribbed from a post by Bart Lateur:
 # <http://www.nntp.perl.org/group/perl.macperl.anyperl/154>
 #
 	my $text = shift;
-
 	$text =~ s{(.*?)\t}{$1.(' ' x ($g_tab_width - length($1) % $g_tab_width))}ge;
 	return $text;
 }
 
-
 1;
 
 __END__
-
 
 =pod
 
@@ -1327,12 +1283,10 @@ __END__
 
 B<Markdown>
 
-
 =head1 SYNOPSIS
 
 B<Markdown.pl> [ B<--html4tags> ] [ B<--version> ] [ B<-shortversion> ]
     [ I<file> ... ]
-
 
 =head1 DESCRIPTION
 
@@ -1350,7 +1304,6 @@ For more information about Markdown's syntax, see:
 
     http://daringfireball.net/projects/markdown/
 
-
 =head1 OPTIONS
 
 Use "--" to end switch parsing. For example, to open a file named "-z", use:
@@ -1358,7 +1311,6 @@ Use "--" to end switch parsing. For example, to open a file named "-z", use:
 	Markdown.pl -- -z
 
 =over 4
-
 
 =item B<--html4tags>
 
@@ -1370,20 +1322,15 @@ instead of Markdown's default XHTML style tags, e.g.:
 
     <br />
 
-
 =item B<-v>, B<--version>
 
 Display Markdown's version number and copyright information.
-
 
 =item B<-s>, B<--shortversion>
 
 Display the short-form version number.
 
-
 =back
-
-
 
 =head1 BUGS
 
@@ -1395,7 +1342,6 @@ Caveats section above) please send email to:
 Please include with your report: (1) the example input; (2) the output
 you expected; (3) the output Markdown actually produced.
 
-
 =head1 VERSION HISTORY
 
 See the readme file for detailed release notes for this version.
@@ -1404,7 +1350,6 @@ See the readme file for detailed release notes for this version.
 
 1.0 - 28 Aug 2004
 
-
 =head1 AUTHOR
 
     John Gruber
@@ -1412,7 +1357,6 @@ See the readme file for detailed release notes for this version.
 
     PHP port and other contributions by Michel Fortin
     http://michelf.com
-
 
 =head1 COPYRIGHT AND LICENSE
 
