@@ -4,3 +4,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="keywords" content="Oxbridge, Convent, High School, School, Patna, Primary School in patna" />
 <meta name="description" content="Oxbridge Convent High School, School in patna, Primary School in patna" />
+<!-- Apple Mobile Web App Metadata -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=yes" />
