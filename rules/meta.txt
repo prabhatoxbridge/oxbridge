@@ -28,3 +28,7 @@
 <meta property="twitter:image:src" content="logo.png">
 <meta property="twitter:image:width" content="1200">
 <meta property="twitter:image:height" content="1200">
+<!-- The robots Protocol (Metadata) -->
+<meta name="robots" content="noindex" />
+<meta name="googlebot" content="noindex" />
+<meta name="googlebot-news" content="noindex" />
